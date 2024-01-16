@@ -9,7 +9,7 @@ class TextCleaning:
 
     #LowerCasing Function
     def lowercasing(self):
-        clean_text = self.data.lower()
+        clean_text = self.data.str.lower()
         return clean_text
     
     #Removing Punctuation Function
