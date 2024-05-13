@@ -8,7 +8,6 @@ class TextCleaning:
             raise ValueError("Input data must be a string.")
         self.data = data
 
-    
     #LowerCasing Function
     def lowercasing(self):
         try:
@@ -44,7 +43,7 @@ class TextCleaning:
     #Removing Special Character
     def removing_special_chars(self):
         try:
-            clean_text = re.sub(r'[^a-zA-Z0–9]', '', self.data)
+            clean_text = re.sub(r'[^a-zA-Z0–9\s]', '', self.data)
         except TypeError:
             raise ValueError("Input data must be a string.")
         return clean_text

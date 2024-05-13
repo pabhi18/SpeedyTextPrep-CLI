@@ -9,7 +9,6 @@ lemmatizer = WordNetLemmatizer()
 ps = PorterStemmer()
 
 class Tokenize:
-    @staticmethod
     def __init__(self, data):
         if not isinstance(data, str):
             raise ValueError("Input data must be a string.")
@@ -24,14 +23,14 @@ class Tokenize:
     
     def stemming(self):
         try:
-            stemmed_text = [ps.stem(w) for w in self.tokenization()]
+            stemmed_text = ps.stem(self.data)
         except TypeError:
             raise ValueError("Input data must be a string.")
         return stemmed_text
     
     def lemmatization(self):
         try:
-            lemmatized_text = [lemmatizer.lemmatize(w) for w in self.tokenization()]
+            lemmatized_text = lemmatizer.lemmatize(self.data)
         except TypeError:
             raise ValueError("Input data must be a string.")
         return lemmatized_text
